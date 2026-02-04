@@ -1,0 +1,133 @@
+/* Mobile-first Step Counter styles */
+:root{
+  --bg: #87ceeb; /* sky blue */
+  --accent: #ffd400; /* yellow */
+  --card: #ffffff;
+  --muted: #666666;
+  --radius: 14px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background:var(--bg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.page{width:100%;max-width:420px}
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.12);
+}
+
+.title{
+  margin:0 0 12px 0;
+  font-size:1.4rem;
+  text-align:center;
+  color:#024a6b;
+}
+
+.center{
+  text-align:center;
+  margin-bottom:14px;
+}
+.number{
+  font-size:3.6rem;
+  font-weight:800;
+  color:#032b3a;
+  line-height:1;
+}
+.status{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+.controls{
+  display:flex;
+  gap:10px;
+  justify-content:space-between;
+  margin:14px 0;
+}
+.btn{
+  background:var(--accent);
+  border:none;
+  border-radius:10px;
+  padding:10px 14px;
+  min-height:44px;
+  flex:1;
+  font-size:1rem;
+  font-weight:600;
+  color:#042028;
+  box-shadow:0 4px 8px rgba(0,0,0,0.08);
+}
+
+.btn:active{transform:translateY(1px)}
+
+.btn-reset{
+  background:#ff7a7a;
+  color:#fff;
+}
+
+.progress-section{
+  margin:12px 0 16px 0;
+}
+.progress-info{
+  display:flex;
+  justify-content:space-between;
+  font-size:0.95rem;
+  color:#034047;
+  margin-bottom:8px;
+}
+
+.progress-bar{
+  background:rgba(3,36,44,0.08);
+  height:14px;
+  border-radius:10px;
+  overflow:hidden;
+}
+.progress-fill{
+  background:linear-gradient(90deg, #ffd400, #ffc107);
+  height:100%;
+  width:0%;
+  transition:width 300ms ease;
+}
+
+.progress-footer{
+  display:flex;
+  justify-content:space-between;
+  margin-top:8px;
+  align-items:center;
+}
+.percent{font-weight:700;color:#024a6b}
+.goal-message{color:#0b6d3a;font-weight:600}
+
+.settings{
+  margin-top:12px;
+  background:rgba(2,74,107,0.04);
+  padding:10px;
+  border-radius:10px;
+}
+.setting-row{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.setting-row label{font-weight:600;color:#024a6b;min-width:90px}
+.setting-row input{flex:1;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.08)}
+.muted{font-size:0.85rem;color:var(--muted);margin-top:8px}
+
+.stats{margin:8px 0}
+.stat-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(2,74,107,0.04)}
+.label{color:#024a6b;font-weight:600}
+.value{font-weight:700}
+
+.setting-actions{margin-top:8px}
+
+@media(min-width:520px){
+  .card{padding:28px}
+  .number{font-size:4.2rem}
+}
