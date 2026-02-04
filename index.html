@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Step Counter (GPS)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <main class="card" role="main">
+      <h1 class="title">Step Counter</h1>
+
+      <section class="center">
+        <div id="stepCount" class="number" aria-live="polite">0</div>
+        <div id="status" class="status">Waiting for permission</div>
+      </section>
+
+      <section class="controls">
+        <button id="startBtn" class="btn">Start (Allow Location)</button>
+        <button id="pauseBtn" class="btn">Pause</button>
+        <button id="resetBtn" class="btn btn-reset">Reset</button>
+      </section>
+
+      <section class="stats">
+        <div class="stat-row"><div class="label">Distance:</div><div id="distance" class="value">0 m</div></div>
+        <div class="stat-row"><div class="label">Speed:</div><div id="speed" class="value">—</div></div>
+        <div class="stat-row"><div class="label">Accuracy:</div><div id="accuracy" class="value">—</div></div>
+      </section>
+
+      <section class="progress-section">
+        <div class="progress-info">
+          <div>Goal: <span id="goalLabel">10,000</span></div>
+          <div>Remaining: <span id="remainingLabel">10,000</span></div>
+        </div>
+
+        <div id="progressBar" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+
+        <div class="progress-footer">
+          <div id="progressPercent" class="percent">0%</div>
+          <div id="goalMessage" class="goal-message" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <details class="settings">
+        <summary>Settings</summary>
+        <div class="setting-row">
+          <label for="goalInput">Daily goal</label>
+          <input id="goalInput" type="number" min="100" max="100000" step="100">
+        </div>
+        <div class="setting-row">
+          <label for="strideInput">Stride (m)</label>
+          <input id="strideInput" type="number" min="0.3" max="1.5" step="0.01">
+        </div>
+        <div class="setting-actions">
+          <button id="saveSettings" class="btn">Save</button>
+        </div>
+        <div class="muted">Note: websites cannot access Apple Health. This app estimates steps from GPS distance; accuracy depends on device and GPS signal.</div>
+      </details>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
